@@ -3,12 +3,11 @@ import { useState, useEffect } from "react";
 type ContactCardProps = {
   id: number;
   name: string;
-  dob: string; // e.g. "5/27/1985"
+  dob: string;
   grossSalary: number;
 };
 
 const ContactCard = ({ id, name, dob, grossSalary }: ContactCardProps) => {
-  // ✅ Safe age calculation
   const calculateAge = (dobString: string): number => {
     if (!dobString) return 0;
     const parts = dobString.split("/").map(Number);
@@ -47,7 +46,6 @@ const ContactCard = ({ id, name, dob, grossSalary }: ContactCardProps) => {
 
   return (
     <div className="w-[400px] bg-white rounded-2xl shadow-lg p-6 font-sans mx-auto">
-      {/* Header */}
       <div className="flex justify-between items-center mb-6">
         <div className="flex items-center gap-4">
           <div className="w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center text-lg font-semibold text-gray-600">
@@ -61,7 +59,6 @@ const ContactCard = ({ id, name, dob, grossSalary }: ContactCardProps) => {
         <p className="text-gray-700 font-medium">Age: {age}</p>
       </div>
 
-      {/* Info Section */}
       <div className="text-center space-y-2">
         <p className="text-sm text-gray-500">Date of Birth</p>
         <p className="text-gray-800 font-medium">{dob}</p>
@@ -91,7 +88,6 @@ const ContactCard = ({ id, name, dob, grossSalary }: ContactCardProps) => {
         </div>
       </div>
 
-      {/* Bottom Section */}
       <div className="flex justify-between items-center mt-6">
         <div className="flex items-center gap-2">
           <span className="text-sm text-gray-700">Is Filer</span>
